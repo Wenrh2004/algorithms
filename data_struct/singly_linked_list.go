@@ -2,35 +2,35 @@
  * Copyright (c) 2023.
  * Project: algorithms
  * File: singly_linked_list.go
- * Last date: 2023/12/16 下午4:03
+ * Last date: 2023/12/18 上午12:15
  * Developer: KingYen
  *
- * Created by KingYen on 2023/12/16 16:3:33.
+ * Created by KingYen on 2023/12/18 0:15:57.
  */
 
 package data_struct
 
 import "fmt"
 
-// The structure of the node in singly linked list.
+// SinglyLinkedListNode ==> The structure of the node in singly linked list.
 type SinglyLinkedListNode struct {
 	value int
 	next  *SinglyLinkedListNode
 }
 
-// The structure of the singly linked list.
+// SinglyLinkedList ==> The structure of the singly linked list.
 type SinglyLinkedList struct {
 	head *SinglyLinkedListNode
 }
 
-// Create a new singly linked list.
+// NewSinglyLinkedList ==> Create a new singly linked list.
 func NewSinglyLinkedList() *SinglyLinkedList {
 	return &SinglyLinkedList{
 		head: nil,
 	}
 }
 
-// Add node to the head of the singly linked list.
+// Add ==> To add node to the head of the singly linked list.
 func (list *SinglyLinkedList) Add(value int) {
 	newNode := &SinglyLinkedListNode{
 		value: value,
@@ -40,7 +40,7 @@ func (list *SinglyLinkedList) Add(value int) {
 	list.head = newNode
 }
 
-// Insert node to the earliest node in singly linked list.
+// Insert ==> To insert node to the earliest node in singly linked list.
 func (list *SinglyLinkedList) Insert(value int) {
 	newNode := &SinglyLinkedListNode{
 		value: value,
@@ -56,12 +56,12 @@ func (list *SinglyLinkedList) Insert(value int) {
 	}
 }
 
-// Delete the lastest node in singly linked list.
+// Delete ==> To delete the lastest node in singly linked list.
 func (list *SinglyLinkedList) Delete() {
 	list.head = list.head.next
 }
 
-// Remove target node in singly linked list.
+// Remove ==> To remove target node in singly linked list.
 func (list *SinglyLinkedList) Remove(target int) {
 	node := list.head
 	if node == nil {
@@ -83,7 +83,7 @@ func (list *SinglyLinkedList) Remove(target int) {
 	}
 }
 
-// Search target node in singly linked list.
+// Search ==> To search target node in singly linked list.
 func (list *SinglyLinkedList) Search(target int) int {
 	node := list.head
 
@@ -107,7 +107,7 @@ func (list *SinglyLinkedList) Search(target int) int {
 	return count
 }
 
-// Get the singly linked list's size.
+// Size ==> To get the singly linked list's size.
 func (list *SinglyLinkedList) Size() int {
 	node := list.head
 	if node == nil {
@@ -123,6 +123,7 @@ func (list *SinglyLinkedList) Size() int {
 	return count
 }
 
+// Print ==> To print the node in singly linked list
 func (list *SinglyLinkedList) Print() {
 	node := list.head
 

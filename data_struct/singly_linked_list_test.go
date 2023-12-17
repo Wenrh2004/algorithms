@@ -2,10 +2,10 @@
  * Copyright (c) 2023.
  * Project: algorithms
  * File: singly_linked_list_test.go
- * Last date: 2023/12/15 下午5:24
+ * Last date: 2023/12/18 上午12:15
  * Developer: KingYen
  *
- * Created by KingYen on 2023/12/15 17:24:12.
+ * Created by KingYen on 2023/12/18 0:15:57.
  */
 
 package data_struct
@@ -18,7 +18,7 @@ func TestSinglyLinkedListLinkedList(t *testing.T) {
 	// Create an empty linked list.
 	singlyLinkedList := NewSinglyLinkedList()
 
-	// Add an element in linked list.
+	// Insert an element in linked list.
 	singlyLinkedList.Insert(1)
 
 	singlyLinkedList.Add(2)
