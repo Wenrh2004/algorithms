@@ -1,36 +1,46 @@
 /*
  * Copyright (c) 2023.
  * Project: algorithms
- * File: singlyLinkedList.go
- * Last date: 2023/12/13 下午11:31
+ * File: singly_linked_list.go
+ * Last date: 2023/12/16 下午4:03
  * Developer: KingYen
  *
- * Created by KingYen on 2023/12/13 23:31:59.
+ * Created by KingYen on 2023/12/16 16:3:33.
  */
 
-package DataStruct
+package data_struct
 
 import "fmt"
 
+// The structure of the node in singly linked list.
 type SinglyLinkedListNode struct {
 	value int
 	next  *SinglyLinkedListNode
 }
 
+// The structure of the singly linked list.
 type SinglyLinkedList struct {
 	head *SinglyLinkedListNode
 }
 
+// Create a new singly linked list.
 func NewSinglyLinkedList() *SinglyLinkedList {
 	return &SinglyLinkedList{
 		head: nil,
 	}
 }
 
-func (receiver SinglyLinkedList) name() {
+// Add node to the head of the singly linked list.
+func (list *SinglyLinkedList) Add(value int) {
+	newNode := &SinglyLinkedListNode{
+		value: value,
+	}
 
+	newNode.next = list.head
+	list.head = newNode
 }
 
+// Insert node to the earliest node in singly linked list.
 func (list *SinglyLinkedList) Insert(value int) {
 	newNode := &SinglyLinkedListNode{
 		value: value,
@@ -46,10 +56,12 @@ func (list *SinglyLinkedList) Insert(value int) {
 	}
 }
 
+// Delete the lastest node in singly linked list.
 func (list *SinglyLinkedList) Delete() {
 	list.head = list.head.next
 }
 
+// Remove target node in singly linked list.
 func (list *SinglyLinkedList) Remove(target int) {
 	node := list.head
 	if node == nil {
@@ -71,7 +83,7 @@ func (list *SinglyLinkedList) Remove(target int) {
 	}
 }
 
-// Search target in singly linked list
+// Search target node in singly linked list.
 func (list *SinglyLinkedList) Search(target int) int {
 	node := list.head
 
@@ -95,7 +107,8 @@ func (list *SinglyLinkedList) Search(target int) int {
 	return count
 }
 
-func (list SinglyLinkedList) Size() int {
+// Get the singly linked list's size.
+func (list *SinglyLinkedList) Size() int {
 	node := list.head
 	if node == nil {
 		panic("nil")
@@ -115,7 +128,6 @@ func (list *SinglyLinkedList) Print() {
 
 	for node != nil {
 		fmt.Printf("%v -> ", node.value)
-		// fmt.Println(node.next)
 		node = node.next
 	}
 

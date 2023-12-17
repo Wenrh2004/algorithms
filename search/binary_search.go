@@ -1,14 +1,14 @@
 /*
  * Copyright (c) 2023.
  * Project: algorithms
- * File: binarySearch.go
- * Last date: 2023/12/11 上午12:28
+ * File: binary_search.go
+ * Last date: 2023/12/15 下午4:59
  * Developer: KingYen
  *
- * Created by KingYen on 2023/12/11 0:28:39.
+ * Created by KingYen on 2023/12/15 16:59:51.
  */
 
-package Search
+package search
 
 /*
  * binarySearch 二分查找
@@ -24,10 +24,10 @@ package Search
  */
 func binarySearch(arr []int, target int) int {
 	left, right := 0, len(arr)-1
-	
+
 	for left <= right {
 		mid := left + (right-left)/2
-		
+
 		if arr[mid] < target {
 			left = mid + 1
 		} else if arr[mid] > target {
@@ -36,6 +36,6 @@ func binarySearch(arr []int, target int) int {
 			return mid
 		}
 	}
-	
+
 	return -1
 }
