@@ -2,10 +2,10 @@
  * Copyright (c) 2023.
  * Project: algorithms
  * File: doubly_linked_list.go
- * Last date: 2023/12/18 上午1:04
+ * Last date: 2023/12/18 下午8:42
  * Developer: KingYen
  *
- * Created by KingYen on 2023/12/18 1:4:51.
+ * Created by KingYen on 2023/12/18 20:42:50.
  */
 
 package data_struct
@@ -64,6 +64,37 @@ func (list *DoublyLinkedList) Insert(value int) {
 		newNode.prev = current
 		list.tail = newNode
 	}
+}
+
+// Delete ==> To delete a node at the end of a doubly linked list.
+func (list *DoublyLinkedList) Delete() {
+	list.tail = list.tail.prev
+	list.tail.next = nil
+}
+
+// Remove ==> To remove a node at the head of a doubly linked list
+func (list *DoublyLinkedList) Remove() {
+	list.head = list.head.next
+	list.head.prev = nil
+}
+
+func (list DoublyLinkedList) Search(target int) int {
+	node := list.head
+
+	count := 0
+	if node == nil {
+		return -1
+	}
+
+	for node != nil {
+		if node.value == target {
+			return count
+		}
+		node = node.next
+		count++
+	}
+
+	return count
 }
 
 func (list *DoublyLinkedList) Display() {

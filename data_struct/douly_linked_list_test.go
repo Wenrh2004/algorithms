@@ -2,10 +2,10 @@
  * Copyright (c) 2023.
  * Project: algorithms
  * File: douly_linked_list_test.go
- * Last date: 2023/12/18 上午1:01
+ * Last date: 2023/12/18 下午8:43
  * Developer: KingYen
  *
- * Created by KingYen on 2023/12/18 1:1:5.
+ * Created by KingYen on 2023/12/18 20:43:54.
  */
 
 package data_struct
@@ -20,5 +20,8 @@ func TestDoublyLinkedList(t *testing.T) {
 	doublyLinkedList.Insert(1)
 	doublyLinkedList.Insert(2)
 	doublyLinkedList.Insert(3)
+	println(doublyLinkedList.Search(3))
+	doublyLinkedList.Remove()
+	doublyLinkedList.Delete()
 	doublyLinkedList.Display()
 }
